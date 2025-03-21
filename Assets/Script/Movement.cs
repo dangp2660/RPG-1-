@@ -37,6 +37,7 @@ public class Movement : MonoBehaviour
         move();
         jumpMove();
         updateAnimator();
+        attack();
     }
 
     private void move()
@@ -82,6 +83,12 @@ public class Movement : MonoBehaviour
         an.SetBool("isJump", isJump);
     }
 
-    
+    private void attack()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            an.SetTrigger("attack");
+        }
+    }
     
 }
